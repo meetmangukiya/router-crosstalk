@@ -1,3 +1,5 @@
+**Published the NPM distributed code since the gh repo mentioned in package.json is private or non-existent.**
+
 <p align="center">
   <a href="https://swc.rs/">
     <img alt="babel" src="https://raw.githubusercontent.com/router-protocol/router-widget/main/router-logo.png" width="546">
