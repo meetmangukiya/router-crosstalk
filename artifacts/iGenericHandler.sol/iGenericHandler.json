@@ -1,0 +1,845 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "_rSyncContract",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "_chainID",
+              "type": "uint8"
+            },
+            {
+              "internalType": "address",
+              "name": "_linkedContract",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct iGenericHandler.RouterLinker",
+          "name": "linker",
+          "type": "tuple"
+        }
+      ],
+      "name": "MapContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "_rSyncContract",
+              "type": "address"
+            },
+            {
+              "internalType": "uint8",
+              "name": "_chainID",
+              "type": "uint8"
+            },
+            {
+              "internalType": "address",
+              "name": "_linkedContract",
+              "type": "address"
+            }
+          ],
+          "internalType": "struct iGenericHandler.RouterLinker",
+          "name": "linker",
+          "type": "tuple"
+        }
+      ],
+      "name": "UnMapContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "fetch_chainID",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_destChainID",
+          "type": "uint8"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_gasLimit",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_gasPrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_feeToken",
+          "type": "address"
+        }
+      ],
+      "name": "genericDeposit",
+      "outputs": [
+        {
+          "internalType": "uint64",
+          "name": "",
+          "type": "uint64"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "_destChainID",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint64",
+          "name": "_depositNonce",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_gasLimit",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_gasPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "replayGenericDeposit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "MapContract((address,uint8,address))": "24757157",
+    "UnMapContract((address,uint8,address))": "fa7a14f4",
+    "fetch_chainID()": "b2c0f640",
+    "genericDeposit(uint8,bytes,uint256,uint256,address)": "9f77b1fb",
+    "replayGenericDeposit(uint8,uint64,uint256,uint256)": "f8d9a813"
+  },
+  "ast": {
+    "absolutePath": "contracts/interfaces/iGenericHandler.sol",
+    "id": 1071,
+    "exportedSymbols": {
+      "iGenericHandler": [
+        1070
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "32:2185:2",
+    "nodes": [
+      {
+        "id": 1013,
+        "nodeType": "PragmaDirective",
+        "src": "32:23:2",
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 1070,
+        "nodeType": "ContractDefinition",
+        "src": "151:2065:2",
+        "nodes": [
+          {
+            "id": 1021,
+            "nodeType": "StructDefinition",
+            "src": "181:102:2",
+            "canonicalName": "iGenericHandler.RouterLinker",
+            "members": [
+              {
+                "constant": false,
+                "id": 1016,
+                "mutability": "mutable",
+                "name": "_rSyncContract",
+                "nameLocation": "215:14:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 1021,
+                "src": "207:22:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1015,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "207:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1018,
+                "mutability": "mutable",
+                "name": "_chainID",
+                "nameLocation": "241:8:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 1021,
+                "src": "235:14:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint8",
+                  "typeString": "uint8"
+                },
+                "typeName": {
+                  "id": 1017,
+                  "name": "uint8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "235:5:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 1020,
+                "mutability": "mutable",
+                "name": "_linkedContract",
+                "nameLocation": "263:15:2",
+                "nodeType": "VariableDeclaration",
+                "scope": 1021,
+                "src": "255:23:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 1019,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "255:7:2",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "RouterLinker",
+            "nameLocation": "188:12:2",
+            "scope": 1070,
+            "visibility": "public"
+          },
+          {
+            "id": 1028,
+            "nodeType": "FunctionDefinition",
+            "src": "562:60:2",
+            "documentation": {
+              "id": 1022,
+              "nodeType": "StructuredDocumentation",
+              "src": "287:272:2",
+              "text": "@notice MapContract Maps the contract from the RouterCrossTalk Contract\n @dev This function is used to map contract from router-crosstalk contract\n @param linker The Data object consisting of target Contract , CHainid , Contract to be Mapped and linker type."
+            },
+            "functionSelector": "24757157",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "MapContract",
+            "nameLocation": "571:11:2",
+            "parameters": {
+              "id": 1026,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1025,
+                  "mutability": "mutable",
+                  "name": "linker",
+                  "nameLocation": "605:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1028,
+                  "src": "583:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_RouterLinker_$1021_calldata_ptr",
+                    "typeString": "struct iGenericHandler.RouterLinker"
+                  },
+                  "typeName": {
+                    "id": 1024,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1023,
+                      "name": "RouterLinker",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1021,
+                      "src": "583:12:2"
+                    },
+                    "referencedDeclaration": 1021,
+                    "src": "583:12:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_RouterLinker_$1021_storage_ptr",
+                      "typeString": "struct iGenericHandler.RouterLinker"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "582:30:2"
+            },
+            "returnParameters": {
+              "id": 1027,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "621:0:2"
+            },
+            "scope": 1070,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 1035,
+            "nodeType": "FunctionDefinition",
+            "src": "909:62:2",
+            "documentation": {
+              "id": 1029,
+              "nodeType": "StructuredDocumentation",
+              "src": "626:280:2",
+              "text": "@notice UnMapContract Unmaps the contract from the RouterCrossTalk Contract\n @dev This function is used to unmap contract from router-crosstalk contract\n @param linker The Data object consisting of target Contract , CHainid , Contract to be unMapped and linker type."
+            },
+            "functionSelector": "fa7a14f4",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "UnMapContract",
+            "nameLocation": "918:13:2",
+            "parameters": {
+              "id": 1033,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1032,
+                  "mutability": "mutable",
+                  "name": "linker",
+                  "nameLocation": "954:6:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1035,
+                  "src": "932:28:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_RouterLinker_$1021_calldata_ptr",
+                    "typeString": "struct iGenericHandler.RouterLinker"
+                  },
+                  "typeName": {
+                    "id": 1031,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1030,
+                      "name": "RouterLinker",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1021,
+                      "src": "932:12:2"
+                    },
+                    "referencedDeclaration": 1021,
+                    "src": "932:12:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_RouterLinker_$1021_storage_ptr",
+                      "typeString": "struct iGenericHandler.RouterLinker"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "931:30:2"
+            },
+            "returnParameters": {
+              "id": 1034,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "970:0:2"
+            },
+            "scope": 1070,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 1051,
+            "nodeType": "FunctionDefinition",
+            "src": "1478:173:2",
+            "documentation": {
+              "id": 1036,
+              "nodeType": "StructuredDocumentation",
+              "src": "975:500:2",
+              "text": "@notice generic deposit on generic handler contract\n @dev This function is called by router crosstalk contract while initiating crosschain transaction\n @param _destChainID Chain id to be transacted\n @param _data Data to be transferred: contains abi encoded selector and data\n @param _gasLimit Gas limit specified for the contract function\n @param _gasPrice Gas price specified for the contract function\n @param _feeToken Fee Token Specified for the contract function"
+            },
+            "functionSelector": "9f77b1fb",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "genericDeposit",
+            "nameLocation": "1487:14:2",
+            "parameters": {
+              "id": 1047,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1038,
+                  "mutability": "mutable",
+                  "name": "_destChainID",
+                  "nameLocation": "1513:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1051,
+                  "src": "1507:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 1037,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1507:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1040,
+                  "mutability": "mutable",
+                  "name": "_data",
+                  "nameLocation": "1546:5:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1051,
+                  "src": "1531:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1039,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1531:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1042,
+                  "mutability": "mutable",
+                  "name": "_gasLimit",
+                  "nameLocation": "1565:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1051,
+                  "src": "1557:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1041,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1557:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1044,
+                  "mutability": "mutable",
+                  "name": "_gasPrice",
+                  "nameLocation": "1588:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1051,
+                  "src": "1580:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1043,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1580:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1046,
+                  "mutability": "mutable",
+                  "name": "_feeToken",
+                  "nameLocation": "1611:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1051,
+                  "src": "1603:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1045,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1603:7:2",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1501:123:2"
+            },
+            "returnParameters": {
+              "id": 1050,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1049,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1051,
+                  "src": "1643:6:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 1048,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1643:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1642:8:2"
+            },
+            "scope": 1070,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 1057,
+            "nodeType": "FunctionDefinition",
+            "src": "1706:55:2",
+            "documentation": {
+              "id": 1052,
+              "nodeType": "StructuredDocumentation",
+              "src": "1655:48:2",
+              "text": "@notice Fetches ChainID for the native chain"
+            },
+            "functionSelector": "b2c0f640",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "fetch_chainID",
+            "nameLocation": "1715:13:2",
+            "parameters": {
+              "id": 1053,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1728:2:2"
+            },
+            "returnParameters": {
+              "id": 1056,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1055,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1057,
+                  "src": "1754:5:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 1054,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1754:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1753:7:2"
+            },
+            "scope": 1070,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 1069,
+            "nodeType": "FunctionDefinition",
+            "src": "2075:139:2",
+            "documentation": {
+              "id": 1058,
+              "nodeType": "StructuredDocumentation",
+              "src": "1765:307:2",
+              "text": "@notice Function to replay a transaction which was stuck due to underpricing of gas\n @param  _destChainID Destination ChainID\n @param  _depositNonce Nonce for the transaction.\n @param  _gasLimit Gas limit allowed for the transaction.\n @param  _gasPrice Gas Price for the transaction."
+            },
+            "functionSelector": "f8d9a813",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "replayGenericDeposit",
+            "nameLocation": "2084:20:2",
+            "parameters": {
+              "id": 1067,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1060,
+                  "mutability": "mutable",
+                  "name": "_destChainID",
+                  "nameLocation": "2116:12:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1069,
+                  "src": "2110:18:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 1059,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2110:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1062,
+                  "mutability": "mutable",
+                  "name": "_depositNonce",
+                  "nameLocation": "2141:13:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1069,
+                  "src": "2134:20:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint64",
+                    "typeString": "uint64"
+                  },
+                  "typeName": {
+                    "id": 1061,
+                    "name": "uint64",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2134:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint64",
+                      "typeString": "uint64"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1064,
+                  "mutability": "mutable",
+                  "name": "_gasLimit",
+                  "nameLocation": "2168:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1069,
+                  "src": "2160:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1063,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2160:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1066,
+                  "mutability": "mutable",
+                  "name": "_gasPrice",
+                  "nameLocation": "2191:9:2",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1069,
+                  "src": "2183:17:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1065,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2183:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2104:100:2"
+            },
+            "returnParameters": {
+              "id": 1068,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2213:0:2"
+            },
+            "scope": 1070,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "iGenericHandler",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 1014,
+          "nodeType": "StructuredDocumentation",
+          "src": "57:94:2",
+          "text": "@title GenericHandler contract interface for router Crosstalk\n @author Router Protocol"
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          1070
+        ],
+        "name": "iGenericHandler",
+        "nameLocation": "161:15:2",
+        "scope": 1071,
+        "usedErrors": []
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 2
+}

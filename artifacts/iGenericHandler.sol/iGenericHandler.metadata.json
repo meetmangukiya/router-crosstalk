@@ -1,0 +1,240 @@
+{
+  "compiler": {
+    "version": "0.8.14+commit.80d49f37"
+  },
+  "language": "Solidity",
+  "output": {
+    "abi": [
+      {
+        "inputs": [
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "_rSyncContract",
+                "type": "address"
+              },
+              {
+                "internalType": "uint8",
+                "name": "_chainID",
+                "type": "uint8"
+              },
+              {
+                "internalType": "address",
+                "name": "_linkedContract",
+                "type": "address"
+              }
+            ],
+            "internalType": "struct iGenericHandler.RouterLinker",
+            "name": "linker",
+            "type": "tuple"
+          }
+        ],
+        "name": "MapContract",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "_rSyncContract",
+                "type": "address"
+              },
+              {
+                "internalType": "uint8",
+                "name": "_chainID",
+                "type": "uint8"
+              },
+              {
+                "internalType": "address",
+                "name": "_linkedContract",
+                "type": "address"
+              }
+            ],
+            "internalType": "struct iGenericHandler.RouterLinker",
+            "name": "linker",
+            "type": "tuple"
+          }
+        ],
+        "name": "UnMapContract",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "fetch_chainID",
+        "outputs": [
+          {
+            "internalType": "uint8",
+            "name": "",
+            "type": "uint8"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint8",
+            "name": "_destChainID",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes",
+            "name": "_data",
+            "type": "bytes"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_gasLimit",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_gasPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "_feeToken",
+            "type": "address"
+          }
+        ],
+        "name": "genericDeposit",
+        "outputs": [
+          {
+            "internalType": "uint64",
+            "name": "",
+            "type": "uint64"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint8",
+            "name": "_destChainID",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "_depositNonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_gasLimit",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "_gasPrice",
+            "type": "uint256"
+          }
+        ],
+        "name": "replayGenericDeposit",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      }
+    ],
+    "devdoc": {
+      "author": "Router Protocol",
+      "kind": "dev",
+      "methods": {
+        "MapContract((address,uint8,address))": {
+          "details": "This function is used to map contract from router-crosstalk contract",
+          "params": {
+            "linker": "The Data object consisting of target Contract , CHainid , Contract to be Mapped and linker type."
+          }
+        },
+        "UnMapContract((address,uint8,address))": {
+          "details": "This function is used to unmap contract from router-crosstalk contract",
+          "params": {
+            "linker": "The Data object consisting of target Contract , CHainid , Contract to be unMapped and linker type."
+          }
+        },
+        "genericDeposit(uint8,bytes,uint256,uint256,address)": {
+          "details": "This function is called by router crosstalk contract while initiating crosschain transaction",
+          "params": {
+            "_data": "Data to be transferred: contains abi encoded selector and data",
+            "_destChainID": "Chain id to be transacted",
+            "_feeToken": "Fee Token Specified for the contract function",
+            "_gasLimit": "Gas limit specified for the contract function",
+            "_gasPrice": "Gas price specified for the contract function"
+          }
+        },
+        "replayGenericDeposit(uint8,uint64,uint256,uint256)": {
+          "params": {
+            "_depositNonce": "Nonce for the transaction.",
+            "_destChainID": "Destination ChainID",
+            "_gasLimit": "Gas limit allowed for the transaction.",
+            "_gasPrice": "Gas Price for the transaction."
+          }
+        }
+      },
+      "title": "GenericHandler contract interface for router Crosstalk",
+      "version": 1
+    },
+    "userdoc": {
+      "kind": "user",
+      "methods": {
+        "MapContract((address,uint8,address))": {
+          "notice": "MapContract Maps the contract from the RouterCrossTalk Contract"
+        },
+        "UnMapContract((address,uint8,address))": {
+          "notice": "UnMapContract Unmaps the contract from the RouterCrossTalk Contract"
+        },
+        "fetch_chainID()": {
+          "notice": "Fetches ChainID for the native chain"
+        },
+        "genericDeposit(uint8,bytes,uint256,uint256,address)": {
+          "notice": "generic deposit on generic handler contract"
+        },
+        "replayGenericDeposit(uint8,uint64,uint256,uint256)": {
+          "notice": "Function to replay a transaction which was stuck due to underpricing of gas"
+        }
+      },
+      "version": 1
+    }
+  },
+  "settings": {
+    "compilationTarget": {
+      "contracts/interfaces/iGenericHandler.sol": "iGenericHandler"
+    },
+    "evmVersion": "london",
+    "libraries": {},
+    "metadata": {
+      "bytecodeHash": "ipfs"
+    },
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "remappings": [
+      ":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+      ":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+      ":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+      ":openzeppelin-contracts/=lib/openzeppelin-contracts/"
+    ]
+  },
+  "sources": {
+    "contracts/interfaces/iGenericHandler.sol": {
+      "keccak256": "0x97b6bbf8d0c9382781f3f1eba2b08f11432031e478a05394543f281092f0717a",
+      "license": "MIT",
+      "urls": [
+        "bzz-raw://5e23d9aa94f1cfd36e0f3bad95336326c16e11bf8e1dddd6dc442ae3367dbd06",
+        "dweb:/ipfs/QmTNUqoVPTvt96eGqhq9G2um3FgrhCfY8f5epnjpeRESUX"
+      ]
+    }
+  },
+  "version": 1
+}

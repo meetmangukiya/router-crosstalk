@@ -1,0 +1,444 @@
+{
+  "compiler": {
+    "version": "0.8.14+commit.80d49f37"
+  },
+  "language": "Solidity",
+  "output": {
+    "abi": [
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "uint8",
+            "name": "sourceChain",
+            "type": "uint8"
+          },
+          {
+            "indexed": true,
+            "internalType": "uint8",
+            "name": "destChain",
+            "type": "uint8"
+          },
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "sourceAddress",
+            "type": "address"
+          }
+        ],
+        "name": "CrossTalkReceive",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "uint8",
+            "name": "sourceChain",
+            "type": "uint8"
+          },
+          {
+            "indexed": true,
+            "internalType": "uint8",
+            "name": "destChain",
+            "type": "uint8"
+          },
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "sourceAddress",
+            "type": "address"
+          },
+          {
+            "indexed": false,
+            "internalType": "address",
+            "name": "destinationAddress",
+            "type": "address"
+          },
+          {
+            "indexed": true,
+            "internalType": "bytes4",
+            "name": "_selector",
+            "type": "bytes4"
+          },
+          {
+            "indexed": false,
+            "internalType": "bytes",
+            "name": "_data",
+            "type": "bytes"
+          },
+          {
+            "indexed": false,
+            "internalType": "bytes32",
+            "name": "_hash",
+            "type": "bytes32"
+          }
+        ],
+        "name": "CrossTalkSend",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "uint8",
+            "name": "ChainID",
+            "type": "uint8"
+          },
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "linkedContract",
+            "type": "address"
+          }
+        ],
+        "name": "Linkevent",
+        "type": "event"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          {
+            "indexed": true,
+            "internalType": "uint8",
+            "name": "ChainID",
+            "type": "uint8"
+          },
+          {
+            "indexed": true,
+            "internalType": "address",
+            "name": "linkedContract",
+            "type": "address"
+          }
+        ],
+        "name": "Unlinkevent",
+        "type": "event"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint8",
+            "name": "_chainID",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "_linkedContract",
+            "type": "address"
+          }
+        ],
+        "name": "Link",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint8",
+            "name": "_chainID",
+            "type": "uint8"
+          }
+        ],
+        "name": "Unlink",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes32",
+            "name": "_hash",
+            "type": "bytes32"
+          }
+        ],
+        "name": "fetchExecutes",
+        "outputs": [
+          {
+            "components": [
+              {
+                "internalType": "uint8",
+                "name": "chainID",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint64",
+                "name": "nonce",
+                "type": "uint64"
+              }
+            ],
+            "internalType": "struct iRouterCrossTalk.ExecutesStruct",
+            "name": "",
+            "type": "tuple"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "fetchFeeToken",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "fetchHandler",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint8",
+            "name": "_chainID",
+            "type": "uint8"
+          }
+        ],
+        "name": "fetchLink",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [],
+        "name": "fetchLinkSetter",
+        "outputs": [
+          {
+            "internalType": "address",
+            "name": "",
+            "type": "address"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint8",
+            "name": "srcChainID",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "srcAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes",
+            "name": "data",
+            "type": "bytes"
+          }
+        ],
+        "name": "routerSync",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          },
+          {
+            "internalType": "bytes",
+            "name": "",
+            "type": "bytes"
+          }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "bytes4",
+            "name": "interfaceId",
+            "type": "bytes4"
+          }
+        ],
+        "name": "supportsInterface",
+        "outputs": [
+          {
+            "internalType": "bool",
+            "name": "",
+            "type": "bool"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ],
+    "devdoc": {
+      "author": "Router Protocol",
+      "events": {
+        "CrossTalkReceive(uint8,uint8,address)": {
+          "params": {
+            "destChain": "Destination ChainID.",
+            "sourceAddress": "Address of source contract.",
+            "sourceChain": "Source ChainID."
+          }
+        },
+        "CrossTalkSend(uint8,uint8,address,address,bytes4,bytes,bytes32)": {
+          "params": {
+            "_data": "Data to interface on Destination side.",
+            "_hash": "Hash of the data sent.",
+            "_selector": "Selector to interface on destination side.",
+            "destChain": "Destination ChainID.",
+            "destinationAddress": "Destination Address.",
+            "sourceAddress": "Source Address.",
+            "sourceChain": "Source ChainID."
+          }
+        },
+        "Linkevent(uint8,address)": {
+          "params": {
+            "ChainID": "Chain id the contract is linked to.",
+            "linkedContract": "Contract address linked to."
+          }
+        },
+        "Unlinkevent(uint8,address)": {
+          "params": {
+            "ChainID": "Chain id the contract is unlinked to.",
+            "linkedContract": "Contract address unlinked to."
+          }
+        }
+      },
+      "kind": "dev",
+      "methods": {
+        "Link(uint8,address)": {
+          "params": {
+            "_chainID": "network Chain ID linked Contract linked to.",
+            "_linkedContract": "Linked Contract address."
+          }
+        },
+        "Unlink(uint8)": {
+          "params": {
+            "_chainID": "network Chain ID linked Contract linked to."
+          }
+        },
+        "fetchLink(uint8)": {
+          "params": {
+            "_chainID": "Chain ID information."
+          }
+        },
+        "routerSync(uint8,address,bytes)": {
+          "params": {
+            "data": "Data to interface on Destination side.",
+            "srcAddress": "Destination ChainID.",
+            "srcChainID": "Source ChainID."
+          }
+        },
+        "supportsInterface(bytes4)": {
+          "details": "Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section] to learn more about how these ids are created. This function call must use less than 30 000 gas."
+        }
+      },
+      "title": "iRouterCrossTalk contract interface for router Crosstalk",
+      "version": 1
+    },
+    "userdoc": {
+      "events": {
+        "CrossTalkReceive(uint8,uint8,address)": {
+          "notice": "CrossTalkReceive Event is emited when a request is recived in destination side when cross chain request accepted by contract."
+        },
+        "CrossTalkSend(uint8,uint8,address,address,bytes4,bytes,bytes32)": {
+          "notice": "CrossTalkSend Event is emited when a request is generated in soruce side when cross chain request is generated."
+        },
+        "Linkevent(uint8,address)": {
+          "notice": "Link event is emitted when a new link is created."
+        },
+        "Unlinkevent(uint8,address)": {
+          "notice": "UnLink event is emitted when a link is removed."
+        }
+      },
+      "kind": "user",
+      "methods": {
+        "Link(uint8,address)": {
+          "notice": "Link This is a public function and can only be called by Generic Handler of router infrastructureThis function links contract on other chain ID's.This is an administrative function and can only be initiated by linkSetter address."
+        },
+        "Unlink(uint8)": {
+          "notice": "UnLink This is a public function and can only be called by Generic Handler of router infrastructureThis function unLinks contract on other chain ID's.This is an administrative function and can only be initiated by linkSetter address."
+        },
+        "fetchExecutes(bytes32)": {
+          "notice": "fetchExecutes This is a public function and fetches the executes struct."
+        },
+        "fetchFeeToken()": {
+          "notice": "fetchFeeToken This is a public function and fetches the fee token set by admin."
+        },
+        "fetchHandler()": {
+          "notice": "fetchLinkSetter This is a public function and fetches the generic handler address."
+        },
+        "fetchLink(uint8)": {
+          "notice": "fetchLinkSetter This is a public function and fetches the address the contract is linked to."
+        },
+        "fetchLinkSetter()": {
+          "notice": "fetchLinkSetter This is a public function and fetches the linksetter address."
+        },
+        "routerSync(uint8,address,bytes)": {
+          "notice": "routerSync This is a public function and can only be called by Generic Handler of router infrastructure"
+        }
+      },
+      "version": 1
+    }
+  },
+  "settings": {
+    "compilationTarget": {
+      "contracts/interfaces/iRouterCrossTalk.sol": "iRouterCrossTalk"
+    },
+    "evmVersion": "london",
+    "libraries": {},
+    "metadata": {
+      "bytecodeHash": "ipfs"
+    },
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "remappings": [
+      ":@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+      ":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+      ":openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+      ":openzeppelin-contracts/=lib/openzeppelin-contracts/"
+    ]
+  },
+  "sources": {
+    "contracts/interfaces/iRouterCrossTalk.sol": {
+      "keccak256": "0x4e5b4f5d64531a96beae05a9c646056d714b7519597944735c7a439445c7079b",
+      "license": "MIT",
+      "urls": [
+        "bzz-raw://505757e2063a28de88785dbe0fb936d82ce05b3fcb41d429a8203e42ecdaa1b9",
+        "dweb:/ipfs/QmTe3j1eVDXpSbf2g34sZ8VTX4xTeMU3gPji1xCCb4zXJ1"
+      ]
+    },
+    "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": {
+      "keccak256": "0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1",
+      "license": "MIT",
+      "urls": [
+        "bzz-raw://be161e54f24e5c6fae81a12db1a8ae87bc5ae1b0ddc805d82a1440a68455088f",
+        "dweb:/ipfs/QmP7C3CHdY9urF4dEMb9wmsp1wMxHF6nhA2yQE5SKiPAdy"
+      ]
+    }
+  },
+  "version": 1
+}
