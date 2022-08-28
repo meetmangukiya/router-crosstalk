@@ -18,7 +18,7 @@ abstract contract RouterCrossTalk is Context, iRouterCrossTalk, ERC165 {
 
   address private feeToken;
 
-  mapping(uint8 => address) private Chain2Addr; // CHain ID to Address
+  mapping(uint8 => address) internal Chain2Addr; // CHain ID to Address
 
   mapping(bytes32 => ExecutesStruct) private executes;
 
